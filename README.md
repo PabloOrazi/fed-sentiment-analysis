@@ -1,1 +1,7 @@
 # fed-sentiment-analysis
+
+La comunicación del banco central se ha vuelto cada vez más transparente en la última década, no solo por razones de legitimidad democrática y responsabilidad, sino también para que la política monetaria sea más efectiva. Los bancos centrales utilizan varios canales de comunicación, como declaraciones a los medios, conferencias de prensa, discursos, informes y minutas. Las declaraciones explican la razón de la acción política y transmiten la perspectiva para la futura postura de la política monetaria. Las minutas proporcionan información más detallada sobre las opiniones de los miembros del Comité sobre la postura política adecuada, la perspectiva económica de EE. UU. y la inclinación de la política monetaria a corto plazo. Aquí es donde los inversores astutos pueden obtener información valiosa sobre la política general de la Fed y cómo puede influir a largo plazo en sus carteras.
+
+Las minutas nos revelan los argumentos, los datos, los riesgos y las expectativas que tiene la Fed sobre el dinero, el crédito, el empleo, la inflación y el crecimiento. El análisis pormenorizado de la minuta es una herramienta clave para los inversores en busca señales del futuro comportamiento de la reserva federal y así poder anticiparnos y ajustar nuestras inversiones según convenga.
+El modelo desarrollado en este proyecto nos permite analizar las minutas sin ningún tipo de sesgo. Analizando oración por oración y calificándolas según su nivel de Hawkish, Dovish o Neutral. El modelo cumple de manera perfecta 
+
