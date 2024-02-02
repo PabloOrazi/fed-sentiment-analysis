@@ -8,6 +8,6 @@ En este contexto, los inversores astutos encuentran valiosa información en las 
 El modelo desarrollado en este proyecto destaca por su habilidad para analizar las minutas de manera objetiva, realizando evaluaciones detalladas oración por oración y asignando clasificaciones basadas en los niveles de Hawkish, Dovish o Neutral. El gráfico 1 respalda la efectividad del modelo, evidenciando su capacidad para identificar de manera coherente un tono dovish en las minutas durante períodos de recesión económica, así como un tono Hawkish cuando la inflación supera el objetivo establecido del 2%. Este enfoque proporciona una valiosa herramienta para anticipar y comprender las posibles respuestas de la Reserva Federal en diferentes condiciones económicas. 
 
 
-Gráfico 1
+                                                                        **Gráfico 1**
 
 ![grafico_sentimiento](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/61326f0e-109e-4e5b-9996-e3aa1b689b51)
