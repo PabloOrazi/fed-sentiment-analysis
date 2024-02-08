@@ -12,12 +12,8 @@ En este contexto, los inversores encuentran valiosa información en las minutas,
 
 ## Datos
 
-En este repositorio mostramos un modelo de predicción de decisiones de política monetaria enriquecido por un modelo de análisis de sentimiento, mediante el cual buscamos que se evalúe las minutas de manera objetiva, realizando evaluaciones oración por oración y asignando clasificaciones basadas en los niveles de Hawkish, Dovish o Neutral. El gráfico 1 muestra la capacidad del modelo de análisis de sentimiento para identificar de manera coherente un tono dovish en las minutas durante períodos de recesión económica, así como un tono Hawkish cuando la inflación supera el objetivo establecido del 2%. Este enfoque proporciona una valiosa herramienta para anticipar y comprender las posibles respuestas de la Reserva Federal en diferentes condiciones económicas en el intento de evitar posibles sesgos de comportamiento de los mercados. 
-
-
-                                                                  # Gráfico 1
-
-
+En este repositorio mostramos un modelo de predicción de decisiones de política monetaria enriquecido por un modelo de análisis de sentimiento, mediante el cual buscamos que se evalúe las minutas de manera objetiva, realizando evaluaciones oración por oración y asignando clasificaciones basadas en los niveles de Hawkish, Dovish o Neutral. El siguiente muestra la capacidad del modelo de análisis de sentimiento para identificar de manera coherente un tono dovish en las minutas durante períodos de recesión económica, así como un tono Hawkish cuando la inflación supera el objetivo establecido del 2%. Este enfoque proporciona una valiosa herramienta para anticipar y comprender las posibles respuestas de la Reserva Federal en diferentes condiciones económicas en el intento de evitar posibles sesgos de comportamiento de los mercados. 
+                                                             
 ![grafico_sentimiento](https://github.com/PabloOrazi/fed-sentiment-analysis/blob/main/img/grafico_sentimiento.jpg?raw=true)
 
 A la información recopilada a partir del análisis de las minutas, hemos incorporado las tasas de interés a tres meses y la Tasa de Referencia (Federal Fund Rate) con el objetivo de anticipar el comportamiento que la Reserva Federal podría adoptar en su próxima decisión. Con este fin, hemos diseñado cuatro modelos, consistiendo en dos Regresiones Logísticas y dos Redes neuronales, cada una con y sin el análisis de sentimiento. De esta manera, podemos evaluar cómo la información derivada de las minutas y la utilización de modelos más sofisticados que los lineales contribuyen a mejorar la precisión de las predicciones.
@@ -29,7 +25,6 @@ Para entrenar los modelos decidimos dividir la informacion de las minutas y las 
 En el primer modelo utiliza Logistic Regression y solamente se nutre con información de las tasas. A la hora de pronosticar, su rendimiento es extremadamente pobre, acierta el 33,33% de las veces, lo que significa que no es mejor que el azar. Si analizamos otros indicadores podemos ver que recall (la proporción de casos positivos que fueron correctamente identificados por el modelo) fue de 50% y precision (la proporción de casos positivos identificados correctamente por el modelo respecto a todos los casos identificados como positivos) fue solamente del 19.13%. Extremadamente bajos. 
 
 Ahora bien, si al mismo modelo le agregamos la información de las minutas, las mejoras son sustanciales. Los tres indicadores mejoran, pasando el accuracy a 79,5%, el recall a 68,0% y el precision a 69,8%. Estas mejoras nos permiten percibir de manera clara que al analizar las minutas hay indicios claros de los futuros pasos de la Reserva Federal. 
-
 
 ![modelos_logistic_regression](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/f6081f5d-84e1-4d69-b360-2dc3ecb7a8b7)
 
