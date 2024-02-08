@@ -24,7 +24,9 @@ Para entrenar los modelos decidimos dividir la informacion de las minutas y las 
 
 En el primer modelo utiliza Logistic Regression y solamente se nutre con información de las tasas. A la hora de pronosticar, su rendimiento es extremadamente pobre, acierta el 33,33% de las veces, lo que significa que no es mejor que el azar. Si analizamos otros indicadores podemos ver que recall (la proporción de casos positivos que fueron correctamente identificados por el modelo) fue de 50% y precision (la proporción de casos positivos identificados correctamente por el modelo respecto a todos los casos identificados como positivos) fue solamente del 19.13%. Extremadamente bajos. 
 
-Ahora bien, si al mismo modelo le agregamos la información de las minutas, las mejoras son sustanciales. Los tres indicadores mejoran, pasando el accuracy a 79,5%, el recall a 68,0% y el precision a 69,8%. Estas mejoras nos permiten percibir de manera incontrovertible que al analizar las minutas hay indicios claros de los futuros pasos de la Reserva Federal. 
+Ahora bien, si al mismo modelo le agregamos la información de las minutas, las mejoras son sustanciales. Los tres indicadores mejoran, pasando el accuracy a 79,5%, el recall a 68,0% y el precision a 69,8%. Estas mejoras nos permiten percibir de manera clara que al analizar las minutas hay indicios claros de los futuros pasos de la Reserva Federal. 
+
+![modelos_logistic_regression](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/f6081f5d-84e1-4d69-b360-2dc3ecb7a8b7)
 
 
 
