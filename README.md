@@ -35,7 +35,7 @@ Por último, tenemos el mejor modelo, que es una Red Neuronal entrenada con la i
 
 ![matriz confusion rn + minutas](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/54460952-b771-4512-8a6e-dd632760ee57)
 
-##Comparación final de los cuatro modelos
+## Comparación final de los cuatro modelos
 
 ![comparacion 4 modelos](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/99105111-8604-48df-b70c-595bbc9639c2)
 
