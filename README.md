@@ -24,5 +24,5 @@ En el primer modelo utiliza Logistic Regression y solamente se nutre con informa
 
 Ahora bien, si al mismo modelo le agregamos la información de las minutas 
 
-![gggg](descarga.jpg)
+![gggg](img/descarga.jpg)
 
