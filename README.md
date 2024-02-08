@@ -18,3 +18,4 @@ En este repositorio mostramos un modelo de predicción de decisiones de polític
 
 A la información recopilada a partir del análisis de las minutas, hemos incorporado las tasas de interés a tres meses y la Tasa de Referencia (Federal Fund Rate) con el objetivo de anticipar el comportamiento que la Reserva Federal podría adoptar en su próxima decisión. Con este fin, hemos diseñado cuatro modelos, consistiendo en dos Regresiones Logísticas y dos Redes neuronales, cada una con y sin el análisis de sentimiento. De esta manera, podemos evaluar cómo la información derivada de las minutas y la utilización de modelos más sofisticados que los lineales contribuyen a mejorar la precisión de las predicciones.
 
+![descarga](https://github.com/PabloOrazi/fed-sentiment-analysis/blob/main/img/descarga.jpg?raw=true)
