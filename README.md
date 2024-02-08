@@ -20,9 +20,11 @@ A la información recopilada a partir del análisis de las minutas, hemos incorp
 --------------------------------------
 Para entrenar los modelos decidimos dividir la informacion de las minutas y las tasas en 3 diferentes datasets el primero, se utilizar para entrenar a los modelos y  es el X_train e y_train que van desde 1995 hasta diciembre 2016. Para la validacion en las redes neuronales usamos los datos que van desde enero 2017 hasta diciembre 2017, y desde enero 2018 hasta la actualidad lo utilizamos para el testeo del mismo. 
 
+## Resultados
+
 En el primer modelo utiliza Logistic Regression y solamente se nutre con información de las tasas. A la hora de pronosticar, su rendimiento es extremadamente pobre, acierta el 33,33% de las veces, lo que significa que no es mejor que el azar. Si analizamos otros indicadores podemos ver que recall (la proporción de casos positivos que fueron correctamente identificados por el modelo) fue de 50% y precision (la proporción de casos positivos identificados correctamente por el modelo respecto a todos los casos identificados como positivos) fue solamente del 19.13%. Extremadamente bajos. 
 
-Ahora bien, si al mismo modelo le agregamos la información de las minutas 
+Ahora bien, si al mismo modelo le agregamos la información de las minutas, las mejoras son sustanciales. Los tres indicadores mejoran, pasando el accuracy a 79,5%, el recall a 68,0% y el precision a 69,8%. Estas mejoras nos permiten percibir de manera incontrovertible que al analizar las minutas hay indicios claros de los futuros pasos de la Reserva Federal. 
 
-![alt text](https://github.com/[PabloOrazi]/[fed-sentiment-analysis]/blob/main/descarga.jpg?raw=true)
+
 
