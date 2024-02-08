@@ -17,5 +17,12 @@ En este repositorio mostramos un modelo de predicción de decisiones de polític
 ![grafico_sentimiento](https://github.com/PabloOrazi/fed-sentiment-analysis/blob/main/img/grafico_sentimiento.jpg?raw=true)
 
 A la información recopilada a partir del análisis de las minutas, hemos incorporado las tasas de interés a tres meses y la Tasa de Referencia (Federal Fund Rate) con el objetivo de anticipar el comportamiento que la Reserva Federal podría adoptar en su próxima decisión. Con este fin, hemos diseñado cuatro modelos, consistiendo en dos Regresiones Logísticas y dos Redes neuronales, cada una con y sin el análisis de sentimiento. De esta manera, podemos evaluar cómo la información derivada de las minutas y la utilización de modelos más sofisticados que los lineales contribuyen a mejorar la precisión de las predicciones.
+--------------------------------------
+Para entrenar los modelos decidimos dividir la informacion de las minutas y las tasas en 3 diferentes datasets el primero, se utilizar para entrenar a los modelos y  es el X_train e y_train que van desde 1995 hasta diciembre 2016. Para la validacion en las redes neuronales usamos los datos que van desde enero 2017 hasta diciembre 2017, y desde enero 2018 hasta la actualidad lo utilizamos para el testeo del mismo. 
 
-![descarga](https://github.com/PabloOrazi/fed-sentiment-analysis/blob/main/img/descarga.jpg?raw=true)
+En el primer modelo utiliza Logistic Regression y solamente se nutre con información de las tasas. A la hora de pronosticar, su rendimiento es extremadamente pobre, acierta el 33,33% de las veces, lo que significa que no es mejor que el azar. Si analizamos otros indicadores podemos ver que recall (la proporción de casos positivos que fueron correctamente identificados por el modelo) fue de 50% y precision (la proporción de casos positivos identificados correctamente por el modelo respecto a todos los casos identificados como positivos) fue solamente del 19.13%. Extremadamente bajos. 
+
+Ahora bien, si al mismo modelo le agregamos la información de las minutas 
+
+![gggg](descarga.jpg)
+
