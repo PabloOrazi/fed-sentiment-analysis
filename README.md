@@ -13,7 +13,7 @@ En este contexto, los inversores encuentran valiosa información en las minutas,
 
 ## Datos
 
-En este repositorio mostramos un modelo de predicción de decisiones de política monetaria enriquecido por un modelo de análisis de sentimiento, mediante el cual buscamos que se evalúe las minutas de manera objetiva, realizando evaluaciones oración por oración y asignando clasificaciones basadas en cuan *Hawkish* (sesgo monetario contractivo), *Dovish* (sesgo monetario expansivo) o *Neutral*  (sesgo monetario sin definición clara) son. El siguiente gráfico muestra la capacidad del modelo de análisis de sentimiento para identificar de manera coherente un tono dovish en las minutas durante períodos de recesión económica, así como un tono Hawkish cuando la inflación supera el objetivo establecido del 2%. Este enfoque proporciona una valiosa herramienta para anticipar y comprender las posibles respuestas de la Reserva Federal en diferentes condiciones económicas en el intento de evitar posibles sesgos de comportamiento de los mercados. 
+En este repositorio mostramos un modelo de predicción de decisiones de política monetaria enriquecido por un modelo de análisis de sentimiento, mediante el cual buscamos que se evalúe las minutas de manera objetiva, realizando evaluaciones oración por oración y asignando clasificaciones basadas en cuan *Hawkish* (sesgo monetario contractivo), *Dovish* (sesgo monetario expansivo) o *Neutral*  (sesgo monetario sin definición clara) son. El siguiente gráfico muestra la capacidad del modelo de análisis de sentimiento para identificar de manera coherente un tono *dovish* en las minutas durante períodos de recesión económica, así como un tono *Hawkish* cuando la inflación supera el objetivo establecido del 2%. Este enfoque proporciona una valiosa herramienta para anticipar y comprender las posibles respuestas de la Reserva Federal en diferentes condiciones económicas en el intento de evitar posibles sesgos de comportamiento de los mercados. 
                                                              
 
 ![grafico_sentimiento](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/74b1eb85-8657-42f3-ad8b-d69ef1c7ba12)
@@ -28,12 +28,9 @@ En el primer modelo utiliza una regresión logística (logistic regression) y so
 
 Ahora bien, si al mismo modelo le agregamos la información de las minutas, las mejoras son sustanciales. Los tres indicadores mejoran, pasando el accuracy a 79,5%, el recall a 68,0% y el precision a 69,8%. Estas mejoras nos permiten percibir de manera clara que al analizar las minutas hay indicios claros de los futuros pasos de la Reserva Federal. A continuación vemos las diferentes métricas y como mejoran una vez que al dataset de las tasas le agregamos la información de las minutas.  
 
-
 ![modelos_logistic_regression](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/781c34cc-8247-4fee-baef-89f58b3b89b6)
 
-
 Además de recall, accuracy y precision, el gráfico también muestra el F1 score, roc_auc_score y log_loss, esenciales para evaluar de manera completa el desempeño de un modelo de machine learning. El F1 score combina precision y recall en una sola métrica, siendo ideal para conjuntos de datos desbalanceados. El roc_auc_score mide la capacidad de clasificación del modelo, mientras que log_loss evalúa la certeza de las probabilidades de las predicciones, siendo menor su valor cuando las predicciones son más certeras.
-
 
 A la hora de analizar otro tipo de modelos como una Red Neuronal, cuando analizamos el mismo tipo de data, nos damos cuenta de que son mejores que la Regresión Logística. Las redes neuronales sin la información de las minutas, es decir, prediciendo la futura decisión de la Fed solamente con el movimiento de las tasas de interés, tienen un accuracy del 64,1%, casi el doble que la Regresión Logística con el mismo dataset. En cuanto a recall y precision, son del 61,7% y el 75,1%, respectivamente. Sin embargo, la Regresión Logística con la información de las minutas muestra un recall y un accuracy superiores (aunque con una precisión ligeramente inferior). 
 
@@ -48,11 +45,9 @@ Mostramos la matriz de confusión de nuestro modelo seleccionado.
 
 ## Comparación final de los cuatro modelos
 
-
 Los modelos que empleamos, la regresión logística y las redes neuronales, ofrecen enfoques distintos en el campo del machine learning. La regresión logística, un modelo más simple y fácil de interpretar, se utiliza para problemas de clasificación al calcular la probabilidad de que una instancia pertenezca a una clase específica utilizando una función logística. Por otro lado, las redes neuronales, son estructuras de aprendizaje que pueden aprender patrones y relaciones complejas en los datos a través de capas de nodos interconectados que procesan información.
 
 En este cuadro, se muestra la comparación de las principales métricas de los modelos seleccionados. Podemos observar que las redes neuronales, con la misma información, son superiores a la Regresión Logística, pero lo que marca la diferencia son las minutas; los modelos con esa información son ampliamente superiores a los que no la tienen.   
-
 
 ![comparacion 4 modelos](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/d8d717c1-c7dc-408c-a904-fc4d49c82066)
 
