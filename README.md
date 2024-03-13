@@ -51,4 +51,5 @@ En este cuadro, se muestra la comparación de las principales métricas de los m
 
 ![comparacion 4 modelos](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/d8d717c1-c7dc-408c-a904-fc4d49c82066)
 
-![Log_loss](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/f27178ca-067a-47c4-9f36-9192e653947f)
+
+![Log_loss](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/beae2241-e94e-40ab-80a2-f8febd39c885)
