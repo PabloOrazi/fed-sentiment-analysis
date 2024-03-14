@@ -7,18 +7,36 @@
 
 ## Introducción
 
-En las últimas décadas, el aspecto de la comunicación por parte de los bancos centrales ha cobrado mayor preponderancia a medida que se evoluciona hacia una mayor transparencia. Este cambio no solo responde a razones de legitimidad democrática y responsabilidad, sino también a la búsqueda de una política monetaria más efectiva. Los bancos centrales emplean diversos canales de comunicación, que incluyen declaraciones a los medios, conferencias de prensa, discursos, informes y minutas. Las declaraciones tienen como objetivo explicar la acción política realizada y transmitir la perspectiva futura en cuanto a la política monetaria. En EE.UU., por ejemplo, las minutas proporcionan información más detallada sobre las opiniones de los miembros del Comité de la Reserva Federal (*FED*), abarcando la postura política adecuada, la perspectiva económica de EE. UU. y la inclinación de la política monetaria a corto plazo.
+En las últimas décadas, el aspecto de la comunicación por parte de los bancos centrales ha cobrado mayor preponderancia a medida que se evoluciona hacia una mayor transparencia. Este cambio no solo responde a razones de legitimidad democrática y responsabilidad, sino también a la búsqueda de una política monetaria más efectiva. Los bancos centrales emplean diversos canales de comunicación, que incluyen declaraciones a los medios, conferencias de prensa, discursos, informes y minutas. Las declaraciones tienen como objetivo explicar la acción política realizada y transmitir la perspectiva futura en cuanto a la política monetaria. En EE.UU., por ejemplo, las minutas proporcionan información más detallada sobre las opiniones de los miembros del Comité de la Reserva Federal (*Fed*), abarcando la postura política adecuada, la perspectiva económica de EE. UU. y la inclinación de la política monetaria a corto plazo.
 
 En este contexto, los inversores encuentran valiosa información en las minutas, revelando argumentos, datos, riesgos y expectativas de la Fed sobre el dinero, el crédito, el empleo, la inflación y el crecimiento. El análisis meticuloso de las minutas se convierte en una herramienta clave para los inversores, permitiéndoles detectar señales sobre el futuro comportamiento de la Reserva Federal y ajustar sus inversiones de manera anticipada.
 
-## Datos
+## Datos y Modelos
 
-En este repositorio mostramos un modelo de predicción de decisiones de política monetaria enriquecido por un modelo de análisis de sentimiento, mediante el cual buscamos que se evalúe las minutas de manera objetiva, realizando evaluaciones oración por oración y asignando clasificaciones basadas en cuan *Hawkish* (sesgo monetario contractivo), *Dovish* (sesgo monetario expansivo) o *Neutral*  (sesgo monetario sin definición clara) son. El siguiente gráfico muestra la capacidad del modelo de análisis de sentimiento para identificar de manera coherente un tono *dovish* en las minutas durante períodos de recesión económica, así como un tono *Hawkish* cuando la inflación supera el objetivo establecido del 2%. Este enfoque proporciona una valiosa herramienta para anticipar y comprender las posibles respuestas de la Reserva Federal en diferentes condiciones económicas en el intento de evitar posibles sesgos de comportamiento de los mercados. 
+En este repositorio mostramos cuatro modelos -dos Regresiones Logísticas y dos Redes neuronales- donde se predicen las decisiones de política monetaria por parte de la Fed.
+
+La decisión de la Fed puede ser:
+
+    - Mantener las tasas de referencia sin cambios
+   
+    - Subir las tasas de referencia
+
+    - Bajar las tasas de referencia
+
+Los insumos que usamos en los modelos para la predicción decisión de la Fed son tres -el análisis de sentimiento de las minutas, las tasas de interés a tres meses y la Tasa de Referencia-.  
+
+En el análisis del sentimiento de las minutas, utilizamos un modelo de inteligencia artificial desarrollado con el fin de evaluarlas de manera objetiva. Este modelo realiza evaluaciones oración por oración, asignando clasificaciones basadas en cuán *Hawkish* (sesgo monetario contractivo), *Dovish* (sesgo monetario expansivo) o *Neutral* (sesgo monetario sin definición clara) son. Para llevar a cabo este análisis, hemos utilizado un modelo de inteligencia artificial de código abierto, específicamente del repositorio de la página Hugging Face.
+
+Ejemplo:
+
+
+
+
+Para medir la efectividad de nuestro análisis de las minutas, hemos utilizado dos modelos de Regresión Logística y dos Redes Neuronales. A un modelo de Regresión Logística le incorporamos la información de las minutas y el otro no. Del mismo modo, desarrollamos dos Redes Neuronales, una con los datos de las minutas y otra sin ellos. Este enfoque nos permite evaluar si la información que obtenemos de las minutas es útil para predecir las decisiones de política monetaria.
+
+El siguiente gráfico muestra la capacidad del modelo de análisis de sentimiento para identificar de manera coherente un tono *dovish* en las minutas durante períodos de recesión económica, así como un tono *Hawkish* cuando la inflación supera el objetivo establecido del 2%. Este enfoque proporciona una valiosa herramienta para anticipar y comprender las posibles respuestas de la Reserva Federal en diferentes condiciones económicas en el intento de evitar posibles sesgos de comportamiento de los mercados. 
                                                              
-
 ![grafico_sentimiento](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/74b1eb85-8657-42f3-ad8b-d69ef1c7ba12)
-
-A la información recopilada a partir del análisis de las minutas, hemos incorporado las tasas de interés a tres meses y la Tasa de Referencia (Federal Fund Rate) con el objetivo de anticipar el comportamiento que la Reserva Federal podría adoptar en su próxima decisión. Con este fin, hemos diseñado cuatro modelos, consistiendo en dos Regresiones Logísticas y dos Redes neuronales, cada una con y sin el análisis de sentimiento. De esta manera, podemos evaluar cómo la información derivada de las minutas y la utilización de modelos más sofisticados que los lineales contribuyen a mejorar la precisión de las predicciones.
 
 Para entrenar los modelos decidimos dividir la informacion de las minutas y las tasas en 3 diferentes datasets. El primero, se utiliza para entrenar a los modelos que van desde 1995 hasta diciembre 2016. El segundo se utiliza para la validación de las redes neuronales usando los datos que van desde enero 2017 hasta diciembre 2017, y por último,  utilizamos para el testeo del mismo los datos que van desde enero 2018 hasta la actualidad.
 
