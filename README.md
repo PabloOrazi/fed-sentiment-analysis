@@ -29,7 +29,7 @@ En el análisis del sentimiento de las minutas, utilizamos un modelo de intelige
 
 Ejemplo:
 
-    ![sentimiento-oracion](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/a15edbb7-1f98-4254-85ef-a1a907bc6c0c)
+![sentimiento-oracion](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/a15edbb7-1f98-4254-85ef-a1a907bc6c0c)
 
 Para medir la efectividad de nuestro análisis de las minutas, hemos utilizado dos modelos de Regresión Logística y dos Redes Neuronales. A un modelo de Regresión Logística le incorporamos la información de las minutas y el otro no. Del mismo modo, desarrollamos dos Redes Neuronales, una con los datos de las minutas y otra sin ellos. Este enfoque nos permite evaluar si la información que obtenemos de las minutas es útil para predecir las decisiones de política monetaria.
 
