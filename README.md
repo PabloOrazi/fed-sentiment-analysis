@@ -23,19 +23,26 @@ La decisión de la Fed puede ser:
 
     - Bajar las tasas de referencia
 
+
+Los modelos que utilizamos son Regresiones Logísticas y Redes Neuronales. La Regresión Logística es un modelo estadístico que se emplea para predecir la probabilidad de un evento, como determinar si un correo electrónico es spam, si un cliente realizará una compra, o en nuestro caso, si la Fed mantendrá, subirá o bajará la tasa de interés. Este modelo utiliza una función logística para establecer la relación entre las variables de entrada y la probabilidad del resultado.
+
+Por otro lado, las Redes Neuronales son modelos de aprendizaje profundo compuestos por capas de nodos interconectados que procesan la información de entrada para producir una salida. Cada neurona aplica transformaciones no lineales a los datos y transmite los resultados a las neuronas de la siguiente capa. Estas redes tienen la capacidad de aprender patrones complejos y características de los datos a través del proceso de entrenamiento.
+
 Los insumos que usamos en los modelos para la predicción decisión de la Fed son tres -el análisis de sentimiento de las minutas, las tasas de interés a tres meses y la Tasa de Referencia-.  
 
 En el análisis del sentimiento de las minutas, utilizamos un modelo de inteligencia artificial desarrollado con el fin de evaluarlas de manera objetiva. Este modelo realiza evaluaciones oración por oración, asignando clasificaciones basadas en cuán *Hawkish* (sesgo monetario contractivo), *Dovish* (sesgo monetario expansivo) o *Neutral* (sesgo monetario sin definición clara) son. Para llevar a cabo este análisis, hemos utilizado un modelo de inteligencia artificial de código abierto, específicamente del repositorio de la página Hugging Face.
 
-Ejemplo:
+Ejemplo de los análisis de las minutas:
 
 ![sentimiento-oracion](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/a15edbb7-1f98-4254-85ef-a1a907bc6c0c)
 
-Para medir la efectividad de nuestro análisis de las minutas, hemos utilizado dos modelos de Regresión Logística y dos Redes Neuronales. A un modelo de Regresión Logística le incorporamos la información de las minutas y el otro no. Del mismo modo, desarrollamos dos Redes Neuronales, una con los datos de las minutas y otra sin ellos. Este enfoque nos permite evaluar si la información que obtenemos de las minutas es útil para predecir las decisiones de política monetaria.
+Este análisis se realiza con todas las oraciones que conforman las minutas, calculando un promedio de todas ellas para obtener un único dato que represente la evaluación de la respectiva minuta.
 
 El siguiente gráfico muestra la capacidad del modelo de análisis de sentimiento para identificar de manera coherente un tono *dovish* en las minutas durante períodos de recesión económica, así como un tono *Hawkish* cuando la inflación supera el objetivo establecido del 2%. Este enfoque proporciona una valiosa herramienta para anticipar y comprender las posibles respuestas de la Reserva Federal en diferentes condiciones económicas en el intento de evitar posibles sesgos de comportamiento de los mercados. 
                                                              
 ![grafico_sentimiento](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/74b1eb85-8657-42f3-ad8b-d69ef1c7ba12)
+
+Para medir la efectividad de nuestro análisis de sentimiento de las minutas, hemos utilizado dos modelos de Regresión Logística y dos Redes Neuronales. A un modelo de Regresión Logística le incorporamos la información de las minutas y el otro no. Del mismo modo, desarrollamos dos Redes Neuronales, una con los datos de las minutas y otra sin ellos. Este enfoque nos permite evaluar si la información que obtenemos de las minutas es útil para predecir las decisiones de política monetaria.
 
 Para entrenar los modelos decidimos dividir la informacion de las minutas y las tasas en 3 diferentes datasets. El primero, se utiliza para entrenar a los modelos que van desde 1995 hasta diciembre 2016. El segundo se utiliza para la validación de las redes neuronales usando los datos que van desde enero 2017 hasta diciembre 2017, y por último,  utilizamos para el testeo del mismo los datos que van desde enero 2018 hasta la actualidad.
 
