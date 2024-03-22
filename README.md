@@ -13,7 +13,7 @@ En este contexto, los inversores encuentran valiosa información en las minutas,
 
 ## Datos y Modelos
 
-En este repositorio mostramos cuatro modelos: dos Regresiones Logísticas y dos Redes Neuronales. Estos modelos emplean inteligencia artificial para predecir las decisiones de política monetaria por parte de la Fed. Estas decisiones pueden ser:
+Con el propósito de destacar las capacidades de la inteligencia artificial, a la hora de interpretar las minutas, creamos este repositorio que cuenta con cuatro modelos: dos Regresiones Logísticas y dos Redes Neuronales. Estos modelos emplean inteligencia artificial para predecir las decisiones de política monetaria por parte de la Fed. Estas decisiones pueden ser:
 
     - Mantener las tasas de referencia sin cambios
    
@@ -32,7 +32,8 @@ En el análisis del sentimiento de las minutas, utilizamos un modelo de intelige
 
 Ejemplo de los análisis de las minutas:
 
-![sentimiento-oracion](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/a15edbb7-1f98-4254-85ef-a1a907bc6c0c)
+![sentimiento-oracion](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/367ccf47-a653-4473-8717-d674263fedc1)
+
 
 Este análisis se realiza con todas las oraciones que conforman las minutas, calculando un promedio de todas ellas para obtener un único dato que represente la evaluación de la respectiva minuta.
 
