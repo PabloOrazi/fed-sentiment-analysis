@@ -13,9 +13,7 @@ En este contexto, los inversores encuentran valiosa información en las minutas,
 
 ## Datos y Modelos
 
-En este repositorio mostramos cuatro modelos -dos Regresiones Logísticas y dos Redes neuronales- donde se predicen las decisiones de política monetaria por parte de la Fed.
-
-La decisión de la Fed puede ser:
+En este repositorio mostramos cuatro modelos: dos Regresiones Logísticas y dos Redes Neuronales. Estos modelos emplean inteligencia artificial para predecir las decisiones de política monetaria por parte de la Fed. Estas decisiones pueden ser:
 
     - Mantener las tasas de referencia sin cambios
    
@@ -24,11 +22,11 @@ La decisión de la Fed puede ser:
     - Bajar las tasas de referencia
 
 
-Los modelos que utilizamos son Regresiones Logísticas y Redes Neuronales. La Regresión Logística es un modelo estadístico que se emplea para predecir la probabilidad de un evento, como determinar si un correo electrónico es spam, si un cliente realizará una compra, o en nuestro caso, si la Fed mantendrá, subirá o bajará la tasa de interés. Este modelo utiliza una función logística para establecer la relación entre las variables de entrada y la probabilidad del resultado.
+La Regresión Logística es un modelo estadístico que se emplea para predecir la probabilidad de un evento, como determinar si un correo electrónico es spam, si un cliente realizará una compra, o en nuestro caso, si la Fed mantendrá, subirá o bajará la tasa de interés. Este modelo utiliza una función logística para establecer la relación entre las variables de entrada y la probabilidad del resultado.
 
-Por otro lado, las Redes Neuronales son modelos de aprendizaje profundo compuestos por capas de nodos interconectados que procesan la información de entrada para producir una salida. Cada neurona aplica transformaciones no lineales a los datos y transmite los resultados a las neuronas de la siguiente capa. Estas redes tienen la capacidad de aprender patrones complejos y características de los datos a través del proceso de entrenamiento.
+Por otro lado, las Redes Neuronales son modelos de *Machine Learning* (ML) denominados de aprendizaje profundo compuestos por capas de nodos interconectados que procesan la información de entrada para producir una salida. Cada neurona aplica transformaciones no lineales a los datos y transmite los resultados a las neuronas de la siguiente capa. Estas redes tienen la capacidad de aprender patrones complejos y características de los datos a través del proceso de entrenamiento.
 
-Los insumos que usamos en los modelos para la predicción decisión de la Fed son tres -el análisis de sentimiento de las minutas, las tasas de interés a tres meses y la Tasa de Referencia-.  
+Los insumos que usamos en los modelos para la predicción de la decisión de la Fed son tres -el análisis de sentimiento de las minutas, las tasas de interés a tres meses y la Tasa de Referencia-.  
 
 En el análisis del sentimiento de las minutas, utilizamos un modelo de inteligencia artificial desarrollado con el fin de evaluarlas de manera objetiva. Este modelo realiza evaluaciones oración por oración, asignando clasificaciones basadas en cuán *Hawkish* (sesgo monetario contractivo), *Dovish* (sesgo monetario expansivo) o *Neutral* (sesgo monetario sin definición clara) son. Para llevar a cabo este análisis, hemos utilizado un modelo de inteligencia artificial de código abierto, específicamente del repositorio de la página Hugging Face.
 
@@ -48,17 +46,15 @@ Para entrenar los modelos decidimos dividir la informacion de las minutas y las 
 
 ## Resultados
 
-En el primer modelo utiliza una regresión logística (logistic regression) y solamente se nutre con información de las tasas. A la hora de pronosticar, su rendimiento es extremadamente pobre, acierta el 33,33% de las veces, lo que significa que no es mejor que el azar. Si analizamos otros indicadores podemos ver que recall (la proporción de casos positivos que fueron correctamente identificados por el modelo) fue de 50% y precision (la proporción de casos positivos identificados correctamente por el modelo respecto a todos los casos identificados como positivos) fue solamente del 19.13%. Extremadamente bajos. 
+En el primer modelo utiliza una regresión logística (*logistic regression*) y solamente se nutre con información de las tasas. A la hora de pronosticar, su rendimiento es extremadamente pobre, acierta el 33,33% de las veces, lo que significa que no es mejor que el azar. Si analizamos otros indicadores podemos ver que recall (la proporción de casos positivos que fueron correctamente identificados por el modelo) fue de 50% y precision (la proporción de casos positivos identificados correctamente por el modelo respecto a todos los casos identificados como positivos) fue solamente del 19.13%. Extremadamente bajos. 
 
 Ahora bien, si al mismo modelo le agregamos la información de las minutas, las mejoras son sustanciales. Los tres indicadores mejoran, pasando el accuracy a 79,5%, el recall a 68,0% y el precision a 69,8%. Estas mejoras nos permiten percibir de manera clara que al analizar las minutas hay indicios claros de los futuros pasos de la Reserva Federal. A continuación vemos las diferentes métricas y como mejoran una vez que al dataset de las tasas le agregamos la información de las minutas.  
 
 ![modelos_logistic_regression](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/781c34cc-8247-4fee-baef-89f58b3b89b6)
 
-Además de recall, accuracy y precision, el gráfico también muestra el F1 score, roc_auc_score y log_loss, esenciales para evaluar de manera completa el desempeño de un modelo de machine learning. El F1 score combina precision y recall en una sola métrica, siendo ideal para conjuntos de datos desbalanceados. El roc_auc_score mide la capacidad de clasificación del modelo, mientras que log_loss evalúa la certeza de las probabilidades de las predicciones, siendo menor su valor cuando las predicciones son más certeras.
+Además de *recall, accuracy* y *precision*, el gráfico también muestra el *F1 score, roc_auc_score* y *log_loss*, esenciales para evaluar de manera completa el desempeño de un modelo de machine learning. El F1 score combina precision y recall en una sola métrica, siendo ideal para conjuntos de datos desbalanceados. El roc_auc_score mide la capacidad de clasificación del modelo, mientras que log_loss evalúa la certeza de las probabilidades de las predicciones, siendo menor su valor cuando las predicciones son más certeras.
 
-A la hora de analizar otro tipo de modelos como una Red Neuronal, cuando analizamos el mismo tipo de data, nos damos cuenta de que son mejores que la Regresión Logística. Las redes neuronales sin la información de las minutas, es decir, prediciendo la futura decisión de la Fed solamente con el movimiento de las tasas de interés, tienen un accuracy del 64,1%, casi el doble que la Regresión Logística con el mismo dataset. En cuanto a recall y precision, son del 61,7% y el 75,1%, respectivamente. Sin embargo, la Regresión Logística con la información de las minutas muestra un recall y un accuracy superiores (aunque con una precisión ligeramente inferior). 
-
-Por último, tenemos el mejor modelo, que es una Red Neuronal entrenada con la información de tasas y las minutas. Este modelo, nuestro modelo final, es superior a todos los demás modelos. El accuracy es del 82,0%, con un recall del 81,7% y una precisión del 85,7%, respectivamente. 
+A la hora de analizar otro tipo de modelos como una Red Neuronal, cuando analizamos el mismo tipo de data, nos damos cuenta de que son mejores que la Regresión Logística. Las redes neuronales sin la información de las minutas, es decir, prediciendo la futura decisión de la Fed solamente con el movimiento de las tasas de interés, tienen un accuracy del 64,1%, casi el doble que la Regresión Logística con el mismo dataset. En cuanto a recall y precision, son del 61,7% y el 75,1%, respectivamente. Sin embargo, la Regresión Logística con la información de las minutas muestra un recall y un accuracy superiores (aunque con una precisión ligeramente inferior). En efecto, tenemos el mejor modelo, que es una Red Neuronal entrenada con la información de tasas y las minutas. Este modelo, nuestro modelo final, es superior a todos los demás modelos. El accuracy es del 82,0%, con un recall del 81,7% y una precisión del 85,7%, respectivamente. 
 
 En machine learning, la matriz de confusión es una herramienta que nos permite evaluar el desempeño de un modelo predictivo. Esta matriz muestra de manera concisa la cantidad de predicciones correctas e incorrectas realizadas por el modelo en comparación con los valores reales. En la matriz, las filas representan los valores reales, mientras que las columnas representan las clases predichas por el modelo. Así, la diagonal principal contiene los casos en los que el modelo acertó, mientras que las celdas fuera de esta diagonal indican los errores de predicción. 
 
