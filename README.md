@@ -13,7 +13,7 @@ En este contexto, los inversores encuentran valiosa información en las minutas,
 
 ## Datos y Modelos
 
-Con el propósito de destacar las capacidades de la inteligencia artificial, a la hora de interpretar las minutas, creamos este repositorio que cuenta con cuatro modelos: dos Regresiones Logísticas y dos Redes Neuronales. Estos modelos emplean inteligencia artificial para predecir las decisiones de política monetaria por parte de la Fed. Estas decisiones pueden ser:
+Con el propósito de destacar las capacidades de la inteligencia artificial, a la hora de interpretar las minutas, creamos este repositorio que cuenta con cuatro modelos: dos Regresiones Logísticas y dos Redes Neuronales. Estos modelos se emplean para predecir las decisiones de política monetaria por parte de la Fed. Estas decisiones pueden ser:
 
     - Mantener las tasas de referencia sin cambios
    
