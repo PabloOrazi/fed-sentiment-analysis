@@ -74,3 +74,17 @@ En este cuadro, se muestra la comparación de las principales métricas de los m
 
 
 ![Log_loss](https://github.com/PabloOrazi/fed-sentiment-analysis/assets/44901407/beae2241-e94e-40ab-80a2-f8febd39c885)
+
+
+## Conclusión
+
+La pregunta de si la inteligencia artificial puede anticipar al mercado financiero, en particular en relación con las decisiones de política monetaria de la Reserva Federal de EE.UU., ha sido explorada a través de este análisis detallado. Los resultados de nuestros modelos, que incluyen regresiones logísticas y redes neuronales, ofrecen una respuesta afirmativa.
+
+Los datos provenientes de las minutas de la Fed, han demostrado ser elementos cruciales para prever las acciones futuras del banco central. En comparación con modelos que solo utilizan datos de tasas de interés, aquellos que incorporan información de las minutas muestran mejoras significativas en términos de precisión, *recall*, *accuracy* y otras métricas clave de desempeño.
+
+El modelo final seleccionado, una Red Neuronal entrenada con la información de las tasas y las minutas, ha destacado como el más efectivo. Con un *accuracy* del 82,0%, un *recall* del 81,7%, y una precisión del 85,7%, este modelo ofrece una visión prometedora para comprender y anticipar las decisiones de política monetaria.
+
+En resumen, la inteligencia artificial, en particular mediante el análisis de sentimiento de las minutas de la Fed, no solo tiene la capacidad de anticipar al mercado, sino que también ofrece una ventaja significativa al proporcionar información valiosa sobre las futuras políticas monetarias. Este estudio subraya la importancia de la tecnología en el análisis financiero y sugiere que su papel continuará siendo fundamental en la toma de decisiones en los mercados financieros.
+
+
+
